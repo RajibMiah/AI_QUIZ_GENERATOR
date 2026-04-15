@@ -1,6 +1,6 @@
 from google import genai
 from dotenv import load_dotenv
-from utils import image_casting
+from utils import casting_files
 import os
 
 #LOADING THE ENVIRONMENT VARIABLE
@@ -15,7 +15,7 @@ Client = genai.Client(api_key = api_key)
 
 def note_genetor(images):
     try:
-        pil_image = image_casting.generate_pil_image(images)
+        pil_image = casting_files.generate_pil_image(images)
         prompt = """
                     Summarize the picture in note format at max 100 words
                     make sure to add necessary markdown to differentiate different section
@@ -27,4 +27,4 @@ def note_genetor(images):
     except:
         response = "Something went wrong"
         
-    return response
+    return response.text

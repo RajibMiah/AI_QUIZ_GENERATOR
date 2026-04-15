@@ -49,11 +49,11 @@ if pressed:
     if images and selected_option:
 
         # NOTEE
+        st.subheader("Your notes")
         with st.container(border=True):
-            st.subheader("Your note")
 
-            # this is replace by AI text
-            st.text(api_call.note_genetor(images))
+            with st.spinner("AI is writing notes for you!"):
+                st.markdown(api_call.note_genetor(images))
 
 
         # AUDIO TRANSCRIPT
