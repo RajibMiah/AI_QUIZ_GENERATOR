@@ -36,4 +36,38 @@ with st.sidebar:
         st.markdown(f"You have selected **{selected_option}** difficulty level for quiz questions.")
     else:
         st.markdown("Please select a difficulty level for quiz questions.")
-    st.button("Click to generate" , type = "primary")
+    pressed = st.button("Click to generate" , type = "primary")
+
+
+if pressed:
+    if not images:
+        st.error("You must upload 1 image")
+    if not selected_option:
+        st.error("You must select a difficulity")
+    
+
+    if images and selected_option:
+
+        # NOTEE
+        with st.container(border=True):
+            st.subheader("Your note")
+
+            # this is replace by AI text
+            st.text("Note will be shown here")
+
+
+        # AUDIO TRANSCRIPT
+        with st.container(border=True):
+            st.subheader("Your audio transcript.")
+
+            # YOUR AUDIO TRANSCRIPT WILL BE SHOWN HERE
+            st.text(" audio transcript panel.")
+
+
+        # QUIZ
+        with st.container(border= True):
+
+            st.subheader(f"Quiz {selected_option}")
+
+            # YOUR QUIZE WILL BE SHOWN HERE
+            st.text("Your quize will be shown here.")
