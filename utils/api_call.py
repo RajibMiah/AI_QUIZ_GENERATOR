@@ -1,7 +1,10 @@
 from google import genai
 from dotenv import load_dotenv
 from utils import casting_files
+from gtts import gTTS
 import os
+import io
+
 
 #LOADING THE ENVIRONMENT VARIABLE
 load_dotenv()
@@ -13,7 +16,7 @@ Client = genai.Client(api_key = api_key)
 
 
 
-def note_genetor(images):
+def note_generator(images):
     try:
         pil_image = casting_files.generate_pil_image(images)
         prompt = """
@@ -25,6 +28,16 @@ def note_genetor(images):
             contents= [ pil_image , prompt]
         )
     except:
-        response = "Something went wrong"
+        response.text = "Something went wrong"
         
     return response.text
+
+
+def audio_transcript(text):
+    speech = gTTS(text , lang = 'en' , slow = False)
+
+    audio_buffer = io.BytesIO()
+
+    speech.write_to_fp(audio_buffer)
+
+    return audio_buffer
