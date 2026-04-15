@@ -1,88 +1,75 @@
-from pypandoc import convert_text
+# 📘 AI Quiz Generator
 
-text = """AI QUIZ GENERATOR
+An interactive AI-powered quiz generation app built with Streamlit. It uses generative AI to create quizzes from images with multiple difficulty levels and real-time scoring.
 
-An interactive AI-powered quiz generation app built with Streamlit. This tool leverages generative AI to create quizzes from images, supporting multiple difficulty levels and real-time scoring.
+---
 
---------------------------------------------------
+## 🚀 Features
 
-FEATURES
-
-1. Image to Quiz (Multi-Difficulty)
-- Upload an image and automatically generate quiz questions based on its content.
+### 1. Image to Quiz (Multi-Difficulty)
+- Upload an image and generate quiz questions from its content
 - Difficulty levels:
-  * Easy – basic recognition and simple questions
-  * Medium – moderate reasoning and context-based questions
-  * Hard – advanced inference and analytical questions
+  - **Easy** – basic recognition and simple questions  
+  - **Medium** – context-based reasoning  
+  - **Hard** – advanced inference and analysis  
 
-2. Multiple Choice + Answers
-- Each question includes multiple-choice options
-- Correct answers are provided
-- Suitable for practice and self-assessment
+### 2. Multiple Choice + Answers
+- Each question includes:
+  - Multiple-choice options  
+  - Correct answer  
+- Suitable for practice and evaluation  
 
-3. Streamlit + Generative AI Integration
-- Built using Streamlit for an interactive UI
-- Integrated with generative AI models for:
-  * Image understanding
-  * Dynamic question generation
+### 3. Streamlit + Generative AI Integration
+- Built with **Streamlit** for UI  
+- Uses **Generative AI** for:
+  - Image understanding  
+  - Dynamic question generation  
 
-4. Scoreboard System
-- Tracks user performance in real time
-- Displays total score and accuracy
+### 4. Scoreboard System
+- Tracks performance in real time  
+- Shows:
+  - Total score  
+  - Accuracy  
 
---------------------------------------------------
+---
 
-TECH STACK
+## 🛠️ Tech Stack
+- **Frontend/UI:** Streamlit  
+- **Backend:** Python  
+- **AI/ML:** Generative AI (LLMs + vision models)  
 
-- Frontend/UI: Streamlit
-- Backend: Python
-- AI/ML: Generative AI (LLMs + image models)
+---
 
---------------------------------------------------
+## 📂 How It Works
+1. Upload an image  
+2. Select difficulty  
+3. Generate quiz  
+4. Answer questions  
+5. View score  
 
-HOW IT WORKS
+---
 
-1. Upload an image
-2. Select difficulty level
-3. AI generates quiz questions
-4. Answer the questions
-5. View your score instantly
+## 🎯 Use Cases
+- Educational tools  
+- Classroom quizzes  
+- Self-learning apps  
+- AI demo projects  
 
---------------------------------------------------
+---
 
-USE CASES
+## ⚙️ Setup
 
-- Educational tools
-- Classroom quizzes
-- Self-learning applications
-- AI experimentation projects
-
---------------------------------------------------
-
-SETUP
-
+```bash
 git clone <repo-url>
 cd ai-quiz-generator
 pip install -r requirements.txt
 streamlit run app.py
 
---------------------------------------------------
-
-FUTURE IMPROVEMENTS
-
-- Leaderboard system
-- Timed quizzes
-- Additional question formats
-- Multi-language support
-
---------------------------------------------------
-
-LICENSE
+📌 Future Improvements
+Leaderboard system
+Timed quizzes
+More question types
+Multi-language support
+📄 License
 
 MIT License
-"""
-
-output_file = "/mnt/data/AI_Quiz_Generator_README.txt"
-convert_text(text, 'plain', format='md', outputfile=output_file, extra_args=['--standalone'])
-
-output_file
