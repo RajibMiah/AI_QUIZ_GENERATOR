@@ -1,5 +1,6 @@
 import streamlit as st
 from utils import api_call 
+from utils import casting_files
 
 st.title("Note summary and Quiz Generator")
 st.markdown("Upload upto 3 images to generate note summary and quiz questions.")
@@ -61,8 +62,7 @@ if pressed:
         with st.container(border=True):
             with st.spinner("Ai is generating audio text"):
                 st.subheader("Your audio transcript.")
-                
-                audio_transcript = api_call.audio_transcript(note_gen)
+                audio_transcript = api_call.audio_transcript(casting_files.make_plain_text(note_gen))
                 # YOUR AUDIO TRANSCRIPT WILL BE SHOWN HERE
                 st.audio(audio_transcript)
 
